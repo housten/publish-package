@@ -36,8 +36,9 @@ jobs:
         tags: ${{ steps.meta.outputs.tags }}
         labels: ${{ steps.meta.outputs.labels }}    
 
-    - name: Build the Docker image
-      run: |
-        docker build . --file sample-packages/docker/Dockerfile --tag publish-package:$(date +%s)
-        echo $GITHUB_TOKEN | docker login ghcr.io -u housten --password-stdin
-        docker push ghcr.io/$GITHUB_REPOSITORY:latest
+# following build works, but not the login
+#    - name: Build the Docker image
+#      run: |
+#        docker build . --file sample-packages/docker/Dockerfile --tag publish-package:$(date +%s)
+#        echo $GITHUB_TOKEN | docker login ghcr.io -u housten --password-stdin
+#        docker push ghcr.io/$GITHUB_REPOSITORY:latest
