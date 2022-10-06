@@ -15,4 +15,4 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Build the Docker image
-      run: docker build . --file sample-packages/Dockerfile --tag sampleContainer:$(date +%s)
+      run: docker build . --file sample-packages/Dockerfile --tag publish-package:$(date +%s)
